@@ -1,4 +1,4 @@
-local movieview = false
+local movieview
 local UI = { 
 	x =  0.000 ,
 	y = -0.001 ,
@@ -8,12 +8,12 @@ local UI = {
 -- Cambias el modo de vision --
 ---------------------------------------------------------------------------
 
-RegisterCommand("cineon", function(source, args, rawCommand)
-	movieview = true
-end, false)
-
-RegisterCommand("cineeoff", function(source, args, rawCommand)
-	movieview = false
+RegisterCommand("cine", function()
+	if not movieView then
+		movieview = true
+	else
+		movieView = false
+	end
 end, false)
 
 Citizen.CreateThread(function()
