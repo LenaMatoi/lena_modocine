@@ -1,4 +1,4 @@
-local movieview
+local movieView
 local UI = { 
 	x =  0.000 ,
 	y = -0.001 ,
@@ -10,7 +10,7 @@ local UI = {
 
 RegisterCommand("cine", function()
 	if not movieView then
-		movieview = true
+		movieView = true
 	else
 		movieView = false
 	end
@@ -19,7 +19,7 @@ end, false)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(10)
-		if movieview then
+		if movieView then
 			HideHUDThisFrame()
 			drawRct(UI.x + 0.0, 	UI.y + 0.0, 1.0,0.15,0,0,0,255) -- Top Bar
 			drawRct(UI.x + 0.0, 	UI.y + 0.85, 1.0,0.151,0,0,0,255) -- Bottom Bar
